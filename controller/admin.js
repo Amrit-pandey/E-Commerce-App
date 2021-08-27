@@ -1,6 +1,6 @@
 const Product = require('../models/product');
 
-exports.postAddProduct = (req,res,next) =>{
+exports.postAddProduct = (req,res) =>{
     const name = req.body.name;
     const price = req.body.price;
     const image = req.body.image;
