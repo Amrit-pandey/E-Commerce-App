@@ -1,14 +1,16 @@
 const express = require('express');
 
-const router = express.Router();
-
 const shopController = require('../controller/shop')
 
-router.get('/products',shopController.getAddProduct)
+const isNormalUser = require('../middleware/is-normalUser')
 
-router.get('/product',shopController.getProductById)
+const router = express.Router();
 
-router.get('/add-to-cart',shopController.addToCart)
+router.get('/products',isNormalUser,shopController.getAddProduct)
+
+router.get('/product',isNormalUser,shopController.getProductById)
+
+router.get('/add-to-cart',isNormalUser,shopController.addToCart)
 // something
 
 module.exports = router;

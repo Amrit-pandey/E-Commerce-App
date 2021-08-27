@@ -2,20 +2,22 @@ const express = require('express');
 
 const adminController = require('../controller/admin')
 
+const isAdminUser = require('../middleware/is-admin')
+
 const router = express.Router();
 
 
 // adding a product => POST
-router.post('/add-product',adminController.postAddProduct);
+router.post('/add-product',isAdminUser,adminController.postAddProduct);
 
 
- router.post('/update-product',adminController.updateProduct);
+ router.post('/update-product',isAdminUser,adminController.updateProduct);
 
- router.post('/delete-product',adminController.deleteProduct);
+ router.post('/delete-product',isAdminUser,adminController.deleteProduct);
 
-  router.get('/products',adminController.fetchAllProducts);
+  router.get('/products',isAdminUser,adminController.fetchAllProducts);
 
-  router.get('/product-details',adminController.findProductById);
+  router.get('/product-details',isAdminUser,adminController.findProductById);
 
 // something
 
