@@ -1,0 +1,23 @@
+{
+  "name": "e-commercenode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "script": "nodemon app.js"
+  },
+  "author": "Amrit pandey",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "mongodb": "^4.1.0",
+    "mongoose": "^5.13.7"
+  }
+}
